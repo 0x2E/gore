@@ -393,6 +393,11 @@ func (f *GoFile) PCLNTab() (*gosym.Table, error) {
 	return f.fh.getPCLNTab()
 }
 
+// PCLNTabData returns the PCLN table data.
+func (f *GoFile) PCLNTabData() (uint64, []byte, error) {
+	return f.fh.getPCLNTABData()
+}
+
 // GetTypes returns a map of all types found in the binary file.
 func (f *GoFile) GetTypes() ([]*GoType, error) {
 	if f.FileInfo.goversion == nil {
